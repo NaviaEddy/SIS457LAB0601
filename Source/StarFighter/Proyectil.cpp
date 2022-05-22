@@ -2,7 +2,6 @@
 
 
 #include "Proyectil.h"
-
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Components/StaticMeshComponent.h"

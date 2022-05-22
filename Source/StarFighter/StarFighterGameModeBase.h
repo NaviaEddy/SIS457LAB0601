@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "NaveEnemigaAerea.h"
 #include "StarFighterGameModeBase.generated.h"
 
 /**
@@ -14,19 +15,25 @@ class STARFIGHTER_API AStarFighterGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 public:
 	AStarFighterGameModeBase();
 
 	float MovementY;
-	float ValueY;
+
 	//template<typename T>
 	//T SpawnNave();
 
+private:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 
+	//Creacion de un puntero a la variable SpawnEnemigo
+	UPROPERTY()
+		ANaveEnemigaAerea* SpawnEnemigo;
+
+	//Creacion de la destruccion del enemigo
+	UFUNCTION()
+		void DestroyActorFunction();
 
 };
 
